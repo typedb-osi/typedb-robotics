@@ -169,15 +169,15 @@ relation mathematics @abstract,
     relation math_definition @abstract, sub mathematics;
         # math definition of a connector being the intersection of two straight lines
         relation link, sub math_definition,
-            relates vertex,
-            relates line_segment;
+            relates vertex @card(0..),
+            relates line_segment @card(0..);
             relation directed_link, sub link,
                 relates start as vertex,
                 relates end_ as vertex;
         # definition of a set
         relation set, sub math_definition,
             relates hull,
-            relates element;
+            relates element @card(0..);
     # mathematical models
         relation math_model @abstract, sub mathematics;
         # model for mapping of line and structural_parts
@@ -217,11 +217,11 @@ relation physics @abstract,
     # mapping of building and closed_space
     relation composing, sub physics,
         relates collection,
-        relates elemental_unit;
+        relates elemental_unit @card(0..);
         relation physically_composing, sub composing,
             relates composition as collection,
-            relates partition as elemental_unit;
+            relates partition as elemental_unit @card(0..);
         relation spatially_composing, sub composing,
             relates structure as collection,
-            relates volume as elemental_unit;
+            relates volume as elemental_unit @card(0..);
 

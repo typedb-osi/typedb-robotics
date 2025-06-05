@@ -1,0 +1,7 @@
+database create robotics 
+transaction schema robotics
+source schema_floorplan.tql
+commit
+transaction write robotics
+source /data_floorplan_assignment.tql
+commit
